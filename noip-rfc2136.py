@@ -257,10 +257,10 @@ async def UpdateReq(request: web.Request) -> web.Response:
             return web.Response(text=exc.message, status=400)
 
     if changed:
-        logger.error(f"Response - HTTP Status: 200, body: good {new_ip}")
+        logger.info(f"Response - HTTP Status: 200, body: good {new_ip}")
         return web.Response(text=f"good {new_ip}", status=200)
 
-    logger.error(f"Response - HTTP Status: 200, body: nochg {new_ip}")
+    logger.info(f"Response - HTTP Status: 200, body: nochg {new_ip}")
     return web.Response(text=f"good {new_ip}", status=200)
 
 
